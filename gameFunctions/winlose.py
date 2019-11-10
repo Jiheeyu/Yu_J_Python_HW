@@ -1,7 +1,10 @@
 from random import randint
+from gameFunctions import config
+
 #define a python function that takes an argument
 def winorlose(status):
 	#status will be either won or lost - you're passing this in as an argument
+	print("************************")
 	print("called win or lose")
 	print("************************")
 
@@ -10,19 +13,24 @@ def winorlose(status):
 	choice = input("Y / N")
 	print(choice)
 
-	if (choice is "Y") or (choice is "n"):
+	if (choice is "N") or (choice is "n"):
 		print("You chose to quit.")
 		exit()
 
 	elif (choice is "Y") or (choice is "y"):
 		#reset the game so that we can start all over again
 		global player_lives
-		global computer_lives
+		global jihee_lives
 		global player
-		global computer
+		global jihee
 		global choices
 
-		player_lives = 1
-		computer_lives = 1
+		config.player_lives = 5
+		config.jihee_lives = 5
 		player = False
-		computer = choice[randint(0,2)]
+		jihee = choice[randint(0,2)]
+
+	else:
+		print("That's not a valid choice, try again")
+		winorlose(status)
+
