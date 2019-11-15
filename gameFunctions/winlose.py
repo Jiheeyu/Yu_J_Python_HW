@@ -8,7 +8,7 @@ def winorlose(status):
 	print("called win or lose")
 	print("************************")
 
-	print("You", status, "! Would you like to play agian?")
+	print("You", status + "! Would you like to play agian?")
 
 	choice = input("Y / N")
 	print(choice)
@@ -19,16 +19,11 @@ def winorlose(status):
 
 	elif (choice is "Y") or (choice is "y"):
 		#reset the game so that we can start all over again
-		global player_lives
-		global jihee_lives
-		global player
-		global jihee
-		global choices
 
 		config.player_lives = 5
 		config.jihee_lives = 5
-		player = False
-		jihee = choice[randint(0,2)]
+		config.player = False
+		config.jihee = config.choices[randint(0,2)]
 
 	else:
 		print("That's not a valid choice, try again")
