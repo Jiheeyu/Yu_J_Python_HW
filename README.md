@@ -24,4 +24,4 @@ Built with Python 3.
 
 ### license
 
-python3
+python3.
