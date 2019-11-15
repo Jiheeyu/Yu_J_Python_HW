@@ -1,6 +1,6 @@
 # Rock Paper Scissors in Python!
 
-## Pick your weapon and play against the computer - you'll only get a virtual sting if you lose!
+### Pick your weapon and play against the computer - you'll only get a virtual sting if you lose!
 
 Prerequisites: All you need is [Pyhton3](https://www.python.org/download/releases/3.0/) to play.
 
@@ -23,3 +23,5 @@ Built with Python 3.
 1. Jiheui Yu
 
 ### license
+
+python3
