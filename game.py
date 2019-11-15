@@ -1,10 +1,6 @@
 # import the randaom package so that we can generate a random choice
 from random import randint 
-from gameFunctions import winlose
-from gameFunctions import comparison
-from gameFunctions import config
-
-
+from gameFunctions import winlose, config, comparison
 # set up some variables for player and AI lives
 # player_lives = 3
 # jihee_lives = 3
@@ -16,17 +12,23 @@ from gameFunctions import config
 # jihee = choices[randint(0,2)]
 
 # set up the game loop so that we don't have to restart all the time
-player = False
 
-while player is False:
+while config.player is False:
 	# set player to True
 	print("*****************************\n\n")
 	print("HELLO!! RPS WORLD!!\n\n")
 	print("*****************************\n\n")
-	print("jihee lives: ", config.jihee_lives, "/5\n\n")
-	print("player lives: ", config.player_lives, "/5\n\n")
+	print("jihee lives: ", config.jihee_lives, "/",config.total_lives,"\n")
+	print("player lives: ", config.player_lives, "/",config.total_lives,"\n")
 	print("Try to beat Jihee!\n\n")
 	print("*****************************\n\n")
+
+	config.player = input("choose rock, paper or scissors: ")
+	config.player = config.player.lower()
+
+	print("jihee chose ", config.jihee, "\n")
+	print("player chose ", config.player, "\n")
+
 
 
 	# player = input("choose rock, paper of scissors: ")
@@ -71,36 +73,11 @@ while player is False:
 	# handle all lives lost for player or AI
 	if config.player_lives is 0:
 		winlose.winorlose("lost")
-		# print("out of lives! you suck at this game. WOuld you like to play agian?")
-		# choice = input("Y / N")
-		# print(choice)
-
-		# if (choice is "Y") or (choice is "n"):
-		# 	print("You chose to quit.")
-		# 	exit()
-		# elif (choice is "Y") or (choice is "y"):
-		# 	#reset the game so that we can start all over again
-		# 	player_lives = 5
-		# 	computer_lives = 5
-		# 	player = False
-		# 	computer = choice[randint(0,2)]
 
 	elif config.jihee_lives is 0:
 		winlose.winorlose("won")
-		# print("Computer is out of lives! You rock at this game. WOuld you like to play agian?")
-		# choice = input("Y / N")
-		# print(choice)
 
-		# if (choice is "Y") or (choice is "n"):
-		# 	print("You chose to quit.")
-		# 	exit()
-		# elif (choice is "Y") or (choice is "y"):
-		# 	player_lives = 5
-		# 	computer_lives = 5
-		# 	player = False
-		# 	computer = choice[randint(0,2)]		
-
-	# else:
-	# 	# need to check all of our conditions after checking for a time
-	# 	player = False
-	# 	jihee = choices[randint(0,2)]
+	else:
+		# need to check all of our conditions after checking for a tie
+		config.player = False
+		config.jihee = config.choices[randint(0, 2)]	
