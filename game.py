@@ -15,8 +15,15 @@ from gameFunctions import winlose, config, comparison
 
 while config.player is False:
 	# set player to True
-	print("*****************************\n\n")
-	print("HELLO!! RPS WORLD!!\n\n")
+	print("*****************************")
+	print("  _     _  ______  _       _____    _____  ") 
+	print(" (_)   (_)(______)(_)     (_____)  (_____) ")
+	print(" (_)___(_)(_)__   (_)    (_)   (_)(_)   (_)")  
+	print(" (_______)(____)  (_)    (_)   (_)(_)   (_)")  
+	print(" (_)   (_)(_)____ (_)____(_)___(_)(_)___(_)")  
+	print(" (_)   (_)(______)(______)(_____)  (_____) ") 
+	print("\n")
+	print("IT IS RPS WORLD\n")
 	print("*****************************\n\n")
 	print("jihee lives: ", config.jihee_lives, "/",config.total_lives,"\n")
 	print("player lives: ", config.player_lives, "/",config.total_lives,"\n")
